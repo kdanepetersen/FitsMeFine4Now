@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fitsmefine.fitsmefine.DisplayCategories">
+
+
+    <RelativeLayout
+        android:layout_width="379dp"
+        android:layout_height="503dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".10">
+
+        <TextView
+            android:id="@+id/etLoginName"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:text="@+id/etLoginID"
+            android:textAlignment="center"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/etq1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select a cateory to view vendors that fit me"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:textSize="18sp"
+            android:layout_below="@+id/etLoginName"
+            android:layout_centerHorizontal="true" />
+
+
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gridview"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="2"
+            android:layout_below="@+id/etq1"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"
+            android:layout_alignParentRight="true" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
