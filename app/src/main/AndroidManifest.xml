@@ -4,6 +4,9 @@
 
     <!-- so I can connect to the internet and get the image files -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- so I can check internet connection and wifi connection -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use

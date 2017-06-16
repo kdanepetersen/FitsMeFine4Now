@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="500dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentRight="false"
             android:layout_alignParentTop="false"
             android:layout_below="@+id/etq1"
             android:layout_centerInParent="true"
