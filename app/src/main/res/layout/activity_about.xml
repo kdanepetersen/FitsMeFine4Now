@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fitsmefine.fitsmefine.Main.AboutActivity">
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/fmf_toolbar"
+    android:layout_width="391dp"
+    android:layout_height="50dp"
+    android:elevation="4dp"
+    android:background="@color/colorFMF"
+    android:title="@string/fmf"
+    android:minHeight="150dp"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:layout_constraintHorizontal_bias="0.428"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="-12dp" />
+
+<ImageView
+    android:id="@+id/iv_index_picture"
+    android:layout_width="378dp"
+    android:layout_height="502dp"
+    android:layout_alignParentTop="true"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    android:src="@drawable/leatherjackets_john_richmond_floral_studded_biker_jacket"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0" />
+
+<TextView
+    android:id="@+id/editText"
+    android:layout_width="328dp"
+    android:layout_height="270dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_weight="1"
+    android:ems="10"
+    android:inputType="text|textMultiLine"
+    android:text="Fits Me Fine is an application that allows you to track fashion items and how they fit you so you have a convenient reference of what vendors fit you."
+    android:textAlignment="center"
+    android:textColor="@android:color/white"
+    android:textColorLink="@android:color/white"
+    android:textSize="28sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="@+id/iv_index_picture"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/iv_index_picture"
+    app:layout_constraintVertical_bias="0.453" />
+
+
+</android.support.constraint.ConstraintLayout>

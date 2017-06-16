@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">FitsMeFine</string>
+    <string name="Best_Fit_Vendors">Select Your Best Fitting Vendors</string>
+    <string name="Ok">Okay</string>
+    <string name="Cancel">Cancel</string>
+    <string name="fmf">Fits Me Fine</string>
+    <string name="select_category">Select a cateory to view vendors that fit me</string>
+    <string name="new_pant">New Pant</string>
+    <string name="new_top">New Top</string>
+    <string name="new_skirt">New Skirt</string>
+    <string name="new_dress">New Dress</string>
+    <string name="new_coat">New Coat</string>
+    <string name="new_suit">New Suit</string>
+    <string name="new_leather_coat">New Leather Coat</string>
+    <string name="new_bathing_suit">New Bathing Suit</string>
+    <string name="new_bra">New Bra</string>
+    <string name="new_underwear">New Underwear</string>
+    <string name="new_shoe">New Shoe</string>
+    <string name="new_boot">New Boot</string>
+
+    <string name="display_categories">Display Categories</string>
+    <string name="home">Home</string>
+    <string name="login">Log In</string>
+    <string name="about">About FMF</string>
+    <string name="maps">Maps</string>
+    <string name="pants_results_list">Pants Results List</string>
+    <string name="ss">Enter a search string</string>
+
+    <string-array name="Vendors">
+        <item>Christian Siriano</item>
+        <item>Nike</item>
+        <item>Daizy Shely</item>
+        <item>Fendi</item>
+        <item>Isabel Marant</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
 </resources>

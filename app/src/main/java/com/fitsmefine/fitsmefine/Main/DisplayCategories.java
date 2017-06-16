@@ -1,25 +1,51 @@
-package com.fitsmefine.fitsmefine;
+package com.fitsmefine.fitsmefine.Main;
 
+import android.app.SearchManager;
+import android.content.Context;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import com.fitsmefine.fitsmefine.Adapters.ImageAdapter;
+import com.fitsmefine.fitsmefine.R;
 
 /**
  * Created by Dane on 5/12/2017.
  */
 
-public class DisplayCategories extends AppCompatActivity {
+public class DisplayCategories extends Index_Activity {
+    private static final String TAG = LoginActivity.class.getSimpleName();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_categories);
+
+        // fmf_toolbar is defined in the layout file
+        Toolbar myChildToolbar = (Toolbar) findViewById(R.id.fmf_toolbar);
+        setSupportActionBar(myChildToolbar);
+        Log.d(TAG, "*****************************************************************************************");
+        Log.d(TAG, "******************* Toolbar created - DisplayCategories.java ***************************");
+        Log.d(TAG, "*****************************************************************************************");
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
+
+
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
@@ -56,4 +82,29 @@ public class DisplayCategories extends AppCompatActivity {
              }
         );
     }
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+
+        Log.d(TAG, "*****************************************************************************************");
+        Log.d(TAG, "**************** Toolbar Menu start of OnCreateOptionsMenu - DisplayCategories.java ****");
+        Log.d(TAG, "*****************************************************************************************");
+
+        // inflate my menu as a menu
+        getMenuInflater().inflate(R.menu.indexmenu, menu);
+
+        // look for id in the menu and set it to invisible
+        menu.findItem(R.id.action_display_categories).setVisible(false);
+
+        // https://developer.android.com/guide/topics/search/search-dialog.html
+        // Get the SearchView and set the searchable configuration
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search_bar).getActionView();
+        // Assumes current activity is the searchable activity
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+
+        return true;
+    }
+
 }

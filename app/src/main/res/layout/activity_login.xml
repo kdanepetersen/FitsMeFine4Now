@@ -5,10 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fitsmefine.fitsmefine.LoginActivity"
+    tools:context="com.fitsmefine.fitsmefine.Main.LoginActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/fmf_toolbar"
+        android:layout_width="391dp"
+        android:layout_height="50dp"
+        android:elevation="4dp"
+        android:background="@color/colorFMF"
+        android:title="@string/fmf"
+        android:minHeight="150dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-12dp" />
 
     <RelativeLayout
         android:layout_width="376dp"

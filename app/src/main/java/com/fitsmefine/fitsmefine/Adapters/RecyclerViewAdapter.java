@@ -10,16 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.fitsmefine.fitsmefine.Pants_Results_List;
 import com.fitsmefine.fitsmefine.R;
 
 import java.util.List;
-
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
     private static final String TAG = RecyclerViewAdapter.class.getSimpleName();
@@ -51,7 +47,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     // pass the items to the recyclerviewadapter
     public RecyclerViewAdapter(Context context, List<Items> itemList){
-Log.d(TAG, "******************* RecyclerViewAdapter started***************************");
+
+        Log.d(TAG, "******************* RecyclerViewAdapter started***************************");
         this.itemList = itemList;
         // recyclerview has to have access to the context
         this.context = context;
@@ -74,7 +71,7 @@ Log.d(TAG, "******************* RecyclerViewAdapter started*********************
 
     @Override
     public void onBindViewHolder(ViewHolder Vholder, int position){
-Log.d(TAG, "******************* onBindViewHolder started***************************");
+        Log.d(TAG, "******************* onBindViewHolder started***************************");
 
         Items k = itemList.get(position);
 
@@ -95,8 +92,7 @@ Log.d(TAG, "******************* onBindViewHolder started************************
 
     @Override
     public int getItemCount(){
-Log.d(TAG, "******************* getItemCount started***************************");
+        Log.d(TAG, "******************* getItemCount started***************************");
         return itemList.size();
     }
-
 }

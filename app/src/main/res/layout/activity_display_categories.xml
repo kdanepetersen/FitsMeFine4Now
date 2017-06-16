@@ -4,8 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fitsmefine.fitsmefine.DisplayCategories">
+    tools:context="com.fitsmefine.fitsmefine.Main.DisplayCategories">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/fmf_toolbar"
+        android:layout_width="391dp"
+        android:layout_height="50dp"
+        android:elevation="4dp"
+        android:background="@color/colorFMF"
+        android:title="@string/fmf"
+        android:minHeight="150dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-12dp" />
 
     <RelativeLayout
         android:layout_width="379dp"
@@ -35,7 +50,7 @@
             android:id="@+id/etq1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select a cateory to view vendors that fit me"
+            android:text="@string/select_category"
             android:textColorLink="@color/colorPrimaryDark"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="3dp"

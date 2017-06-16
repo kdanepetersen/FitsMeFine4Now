@@ -1,14 +1,17 @@
-package com.fitsmefine.fitsmefine;
+package com.fitsmefine.fitsmefine.Main;
 
+        import android.app.SearchManager;
         import android.content.Context;
         import android.os.Bundle;
+        import android.support.v7.app.ActionBar;
         import android.support.v7.app.AppCompatActivity;
-        import android.support.v7.widget.GridLayoutManager;
         import android.support.v7.widget.LinearLayoutManager;
         import android.support.v7.widget.RecyclerView;
+        import android.support.v7.widget.SearchView;
+        import android.support.v7.widget.Toolbar;
         import android.util.Log;
-        import android.view.Window;
-        import android.widget.RelativeLayout;
+        import android.view.Menu;
+
         import com.fitsmefine.fitsmefine.Adapters.Items;
         import com.fitsmefine.fitsmefine.Adapters.RecyclerViewAdapter;
         import com.fitsmefine.fitsmefine.R;
@@ -19,7 +22,7 @@ package com.fitsmefine.fitsmefine;
  * Created by Dane on 5/11/2017.
  */
 
-public class Pants_Results_List extends AppCompatActivity {
+public class Pants_Results_List extends Index_Activity {
     private static final String TAG = Pants_Results_List.class.getSimpleName();
 
     RecyclerView recyclerView;
@@ -31,45 +34,82 @@ public class Pants_Results_List extends AppCompatActivity {
 
     // declaring how the item in the recyclerview will be layed out
     RecyclerView.LayoutManager recylerViewLayoutManager;
+
     // create the list of items to display in the Image Adapter List - creates the itemList array private to this class
     private List<Items> itemList = new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-// create the activity (oncreate) and save the state of what is being displayed
+        // create the activity (oncreate) and save the state of what is being displayed
         super.onCreate(savedInstanceState);
+
         // setContentView displays what is being passed
         setContentView(R.layout.activity_pants_results_list);
+
+        // fmf_toolbar is defined in the layout file
+        Toolbar myChildToolbar = (Toolbar) findViewById(R.id.fmf_toolbar);
+        setSupportActionBar(myChildToolbar);
+        Log.d(TAG, "*****************************************************************************************");
+        Log.d(TAG, "******************* Toolbar created - Pants Results List.java ***************************");
+        Log.d(TAG, "*****************************************************************************************");
+
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
+
+
         // context (interfact to the global information about your application) is your app, and is what connects to the other classes.  Get application context gets all the back end connection information
         context = getApplicationContext();
         // create the itemList array
         createList();
-Log.d(TAG, "*******************createList called***************************");
-
+        Log.d(TAG, "*******************createList called***************************");
         // set the reecyclerView variable to the RecyclerView data type - look in xml files to find recyclerview layout to be able to display the data in the recycler view
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-Log.d(TAG, "************************set the reecyclerView variable to the RecyclerView data type - look in xml files to find recyclerview layout to be able to display the data in the recycler view*******************");
+        Log.d(TAG, "************************set the reecyclerView variable to the RecyclerView data type - look in xml files to find recyclerview layout to be able to display the data in the recycler view*******************");
         //create the layout manager (Change 2 to your choice because here 2 is the number of Grid layout Columns in each row).
         LinearLayoutManager llm = new LinearLayoutManager(this);
-
-Log.d(TAG, "*****************************Linear Layout Manager created*********************************");
-
+        Log.d(TAG, "*****************************Linear Layout Manager created*********************************");
         //recylerViewLayoutManager = new LinearLayoutManager(context);
         // set the layout to vertical
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-Log.d(TAG, "*****************************set Layout Manager *********************************");
+        Log.d(TAG, "*****************************set Layout Manager *********************************");
         // set the recyclerview's layout manager to llm
         recyclerView.setLayoutManager(llm);
-//        recyclerViewAdapter = new ImageAdapter(context,itemList);
+        //        recyclerViewAdapter = new ImageAdapter(context,itemList);
         // giving RecyclerViewAdapter permission to display the private itemList array
         recyclerViewAdapter = new RecyclerViewAdapter(context,itemList);
-Log.d(TAG, "*****************************new recyclerViewAdapter *********************************");
+        Log.d(TAG, "*****************************new recyclerViewAdapter *********************************");
         recyclerView.setAdapter(recyclerViewAdapter);
-Log.d(TAG, "*****************************set Adapter *********************************");
+        Log.d(TAG, "*****************************set Adapter *********************************");
 
         // requestWindowFeature(Window.FEATURE_ACTION_BAR);
         // relativeLayout = (RelativeLayout) findViewById(R.id.activity_display_categories);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+        Log.d(TAG, "************************** start of onCreateOptionsMenu() of Pants_Results_List *********************************");
+        // inflate my menu as a menu - creates the items in the menu
+        getMenuInflater().inflate(R.menu.indexmenu, menu);
+
+        // look for id in the menu and set it to invisible
+        menu.findItem(R.id.action_home).setVisible(false);
+
+        // https://developer.android.com/guide/topics/search/search-dialog.html
+        // Get the SearchView and set the searchable configuration
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search_bar).getActionView();
+        // Assumes current activity is the searchable activity
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        // searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+
+        return true;
+    }
+
+
 
     private void createList()
     {

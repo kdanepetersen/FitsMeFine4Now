@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- should appear as action button if possible -->
+    <item
+        android:id="@+id/action_search_bar"
+        android:title="Search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <!-- always display in the overflow (via showAsAction=never) -->
+    <item android:id="@+id/action_home"
+        android:title="@string/home"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_login"
+        android:title="@string/login"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_about"
+        android:title="@string/about"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_display_categories"
+        android:title="@string/display_categories"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_pants_results_list"
+        android:title="@string/pants_results_list"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_maps"
+        android:title="@string/maps"
+        app:showAsAction="never"/>
+
+</menu>
+
