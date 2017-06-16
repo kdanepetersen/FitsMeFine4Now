@@ -28,20 +28,24 @@
         <activity android:name=".Main.Index_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.default_searchable"
                 android:value="com.fitsmefine.fitsmefine.Main.Search_Results_Activity" />
         </activity>
         <!-- Defining the Search_Results_Activity -->
-        <activity android:name=".Main.Search_Results_Activity"
+        <activity
+            android:name=".Main.Search_Results_Activity"
             android:parentActivityName=".Main.Index_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
-                <category android:name="android.intent.category.DEFAULT" />
 
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
@@ -51,19 +55,19 @@
 
         <!-- Defining parent's for each of the activities to return to Index when the up arrow is selected -->
         <activity
-            android:name="com.fitsmefine.fitsmefine.Main.LoginActivity"
+            android:name=".Main.LoginActivity"
             android:parentActivityName=".Main.Index_Activity" />
         <activity
-            android:name="com.fitsmefine.fitsmefine.Main.AboutActivity"
+            android:name=".Main.AboutActivity"
             android:parentActivityName=".Main.Index_Activity" />
         <activity
-            android:name="com.fitsmefine.fitsmefine.Main.DisplayCategories"
+            android:name=".Main.DisplayCategories"
             android:parentActivityName=".Main.Index_Activity" />
         <activity
-            android:name="com.fitsmefine.fitsmefine.Main.Pants_Results_List"
+            android:name=".Main.Pants_Results_List"
             android:parentActivityName=".Main.Index_Activity" />
         <activity
-            android:name="com.fitsmefine.fitsmefine.Main.MapsActivity"
+            android:name=".Main.MapsActivity"
             android:parentActivityName=".Main.Index_Activity" />
 
         <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -71,23 +75,7 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.fitsmefine.fitsmefine.Main.Index_Activity" />
 
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
-        -->
-        <!--
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-        <activity
-            android:name=".Main.MapsActivity"
-            android:label="@string/title_activity_maps">
-        </activity>
-        -->
+
         <!-- <uses-feature android:name="android.hardware.camera.any" android:required="true" /> -->
 
 
@@ -98,6 +86,21 @@
         •	<receiver> elements for broadcast receivers
         •	<provider> elements for content providers
         -->
+
+
+        <!--    *********************   Google Maps stuff
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAAuV2-5mczdr9rG14tH9AmbLUGXr8joVs" />
+
     </application>
 
 </manifest>
