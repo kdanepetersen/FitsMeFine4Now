@@ -30,7 +30,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".10">
+        app:layout_constraintVertical_bias="0.75">
 
         <TextView
             android:id="@+id/etLoginName"
@@ -38,8 +38,8 @@
             android:layout_height="20dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="3dp"
             android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
             android:text="@+id/etLoginID"
             android:textAlignment="center"
             android:textColorLink="@color/colorPrimaryDark"
@@ -50,26 +50,30 @@
             android:id="@+id/etq1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/etLoginName"
+            android:layout_alignBottom="@+id/etLoginName"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:text="@string/select_category"
             android:textColorLink="@color/colorPrimaryDark"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:textSize="18sp"
-            android:layout_below="@+id/etLoginName"
-            android:layout_centerHorizontal="true" />
+            android:textSize="18sp" />
 
 
         <GridView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/gridview"
             android:layout_width="wrap_content"
             android:layout_height="500dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="false"
+            android:layout_below="@+id/etq1"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:horizontalSpacing="10dp"
             android:numColumns="2"
-            android:layout_below="@+id/etq1"
             android:stretchMode="columnWidth"
-            android:verticalSpacing="10dp"
-            android:layout_alignParentRight="true" />
+            android:verticalSpacing="10dp" />
 
 
     </RelativeLayout>
